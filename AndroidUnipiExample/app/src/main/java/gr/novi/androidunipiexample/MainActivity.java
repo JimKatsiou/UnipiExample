@@ -12,7 +12,7 @@ import android.widget.TextView;
 import gr.novi.androidunipiexample.viewmodels.MainViewModel;
 import gr.novi.androidunipiexample.viewmodels.MainViewModelListener;
 
-public class MainActivity extends AppCompatActivity {
+public final class MainActivity extends AppCompatActivity {
 
     private Button loginButton;
     private EditText usernanemEditText;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     //region Listeners
 
-    private View.OnClickListener loginButtonClick = new View.OnClickListener() {
+    private final View.OnClickListener loginButtonClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             errorTextView.setVisibility(View.GONE);
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    private MainViewModelListener viewModelListener = new MainViewModelListener() {
+    private final MainViewModelListener viewModelListener = new MainViewModelListener() {
         @Override
         public void success() {
             startForum();
